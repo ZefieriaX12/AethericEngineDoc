@@ -1,0 +1,13 @@
+To do list:
+
+- Seems like a basic app to connect to WebSocket (Make property file for ip, port and token) (NOTE: Set max_size limit due to note that said message might 200GB in length...)
+- Send message AUTH JWT_TOKEN <= Either AUTH <token> or AUTH JWT_TOKEN <token> (Need to test)
+- Message can be string or binary
+	String starts with $ and ends with ;
+	Binary has header [0]=0xAA, [1]=payload size, [6 till end]=payload
+		-> Never played with endpoint that return different type of datatype... should be interesting...  Probably just checkn the first character to determine type
+-Send message STATUS to terminate message generation, then disconnet (btw, make sure that there's more message in socket, basically flushed, Python Websocket should already handle it)
+-Message are sent to SQLite table, 1 for ascii and 1 for binary (probably log the time and add incremental number + index, and original text)
+-Stop after 600 messaage is received
+
+-Separate app to validate message? Seperate script? or Just a seperate function... Probably just make a REST service that reads message and then tag it as invalid if incorrect...
