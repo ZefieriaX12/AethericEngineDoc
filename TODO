@@ -11,3 +11,20 @@ To do list:
 -Stop after 600 messaage is received
 
 -Separate app to validate message? Seperate script? or Just a seperate function... Probably just make a REST service that reads message and then tag it as invalid if incorrect...
+
+Update: 2025-12-13
+
+1. Socket, not websocket
+2. Message from socket can contain both ascii and binary... Need to handle it...
+3. Message can come in multiple parts, you will need to handle such messages
+	ascii:
+		Must be length >= 5
+		Only printable ascii
+		Start with $ and end with ;, since size is unknown, looping thru each index is require. Need to ensure is printable ascii too
+	binary:
+		[0] = 0xaa
+		[1:6] = size
+		[6:] = payload (Can extend to next message if current message < size)
+4. Send STATUS to end messages, still call recv to drain the pipe till exception is reach
+5. Save message to DB, use ORM
+	5.1 Save raw message for reference. Also add relationship to link raw messages (multiple) to 1 ascii/binary
