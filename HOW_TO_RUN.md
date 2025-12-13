@@ -2,6 +2,8 @@
 
 The project uses mostly Python 3.12 internal modules along with peewee (refer to requirements.txt)
 
+Go into the folder "script", then run using the code below
+
 Windows
 - python.exe main.py
 
