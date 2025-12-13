@@ -4,6 +4,7 @@ The project uses mostly Python 3.12 internal modules along with peewee (refer to
 
 Windows
 - python.exe main.py
+
 Linux
 - python3 main.py
 
