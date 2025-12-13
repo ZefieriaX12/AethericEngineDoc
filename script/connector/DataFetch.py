@@ -1,3 +1,5 @@
+# AI was used to figure out that I should use Socket instead of WebSockets...
+
 import socket
 import parser.DataParser as dParser
 
