@@ -11,7 +11,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def processMessage(sConnector:SConnector, msgCount) -> str:
+def processMessage(sConnector:SConnector, msgCount):
     endLoop = False
     dataToParse = None
 
