@@ -5,3 +5,6 @@ class Ascii_Data(BaseModel):
     id = AutoField()
     payload = TextField()
 
+    class Meta:
+        table_name = "msgascii"
+

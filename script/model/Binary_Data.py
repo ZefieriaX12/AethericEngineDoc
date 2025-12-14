@@ -6,3 +6,5 @@ class Binary_Data(BaseModel):
     payload = BlobField()
     payload_size = IntegerField()
 
+    class Meta:
+        table_name = "msgbinary"
